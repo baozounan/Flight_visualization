@@ -10,6 +10,63 @@
     <type>double</type>
    <node>/position/altitude-ft</node>
    </chunk>
+
+       <chunk>
+
+       <name>MACH Number</name>
+
+       <format>M%4.1f</format>
+
+       <type>float</type>
+
+       <node>/velocities/mach</node>
+
+     </chunk>
+
+
+
+     <chunk>
+
+       <name>Ground Speed</name>
+
+       <format>GS:%3dkts</format>
+
+       <node>/instrumentation/gps/indicated-ground-speed-kt</node>
+
+     </chunk>
+
+
+
+     <chunk>
+
+       <name>G Load</name>
+
+       <format>G%2.1f</format>
+
+       <type>float</type>
+
+       <node>/accelerations/pilot/z-accel-fps_sec</node>
+
+       <factor>-0.03108095</factor>
+
+        <damp>1.0</damp>
+
+     </chunk>
+
+
+
+     <chunk>
+
+       <name>AGL</name>
+
+       <format>AGL%4.0f</format>
+
+       <type>float</type>
+
+       <node>/position/altitude-agl-ft</node>
+
+     </chunk>
+
      
   </output>  
 </generic>
