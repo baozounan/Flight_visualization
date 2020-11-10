@@ -11,13 +11,13 @@ def udp_receive_message(ip_addr,port):
     # 3接受数据
     while True:
         rec_data = udp_socket.recvfrom(1024)
-        rec_msg = rec_data[0]
+        rec_msg = rec_data[0].decode()
         send_addr = rec_data[1]
         # 打印收到的数据
         # print(rec_data)
         print(rec_msg)
+        #print(rec_data)  #数据来源
         print(type(rec_msg))
-        # print(send_addr)
         # print("%s:%s" % (str(send_addr), rec_msg.decode("gb18030")))
     # 关闭套接字
     udp_socket.close()

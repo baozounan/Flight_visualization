@@ -8,8 +8,9 @@
     <chunk>
 
        <name>Pos.qnh</name>
+       <format>Pos：%4.1f</format>
 
-       <type>double</type>
+       <type>float</type>
 
        <node>/position/altitude-ft</node>
 
@@ -19,7 +20,7 @@
 
        <name>MACH Number</name>
 
-       <format>M%4.1f</format>
+       <format>M：%4.1f</format>
 
        <type>float</type>
 
@@ -45,7 +46,7 @@
 
        <name>G Load</name>
 
-       <format>G%2.1f</format>
+       <format>G：%2.1f</format>
 
        <type>float</type>
 
@@ -63,7 +64,7 @@
 
        <name>AGL</name>
 
-       <format>AGL%4.0f</format>
+       <format>AGL：%4.0f</format>
 
        <type>float</type>
 
