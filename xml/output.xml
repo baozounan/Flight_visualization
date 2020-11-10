@@ -12,7 +12,7 @@
     <chunk>
 
        <name>roll-deg</name>
-       <format>roll_deg：%5.2f</format>
+       <format>roll_deg:%5.2f</format>
 
        <type>float</type>
 
@@ -24,7 +24,7 @@
     <chunk>
 
        <name>pitch-deg</name>
-       <format>pitch_deg：%5.2f</format>
+       <format>pitch_deg:%5.2f</format>
 
        <type>float</type>
 
@@ -36,7 +36,7 @@
     <chunk>
 
        <name>airspeed-kt</name>
-       <format>airspeed_kt：%5.2f</format>
+       <format>airspeed_kt:%5.2f</format>
 
        <type>float</type>
 
@@ -62,7 +62,7 @@
      <chunk>
 
        <name>Pos.qnh</name>
-       <format>Alt：%5.1f</format>
+       <format>Alt:%5.1f</format>
 
        <type>float</type>
 
@@ -106,7 +106,7 @@
 
        <name>MACH Number</name>
 
-       <format>M：%4.1f</format>
+       <format>M:%4.1f</format>
 
        <type>float</type>
 
@@ -132,7 +132,7 @@
 
        <name>G Load</name>
 
-       <format>G：%3.1f</format>
+       <format>G:%3.1f</format>
 
        <type>float</type>
 
@@ -150,7 +150,7 @@
 
        <name>AGL</name>
 
-       <format>AGL：%4.0f</format>
+       <format>AGL:%4.0f</format>
 
        <type>float</type>
 
@@ -158,7 +158,75 @@
 
      </chunk>
 
-     
+
+    <!--纬度-->
+    <chunk>
+
+        <name>latitude-deg</name>
+
+        <format>latitude-deg:%4.7f</format>
+
+        <type>double</type>
+
+        <node>/position/latitude-deg</node>
+
+    </chunk>>
+
+
+    <!--经度-->
+    <chunk>
+
+        <name>longitude-deg</name>
+
+        <format>longitude-deg:%4.7f</format>
+
+        <type>double</type>
+
+        <node>/position/longitude-deg</node>
+
+    </chunk>>
+
+
+    <!--高度-->
+    <!--<chunk>
+
+        <name>altitude-ft</name>
+
+        <format>altitude-ft:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/position/altitude-ft</node>
+
+    </chunk>-->
+
+
+    <!--气压高度-->
+    <chunk>
+
+        <name>BaroA</name>
+
+        <format>BaroA:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/instrumentation/altimeter/setting-inhg</node>
+
+    </chunk>
+
+
+    <!--外界大气温度-->
+    <chunk>
+
+        <name>OAT</name>
+
+        <format>OAT:%4.1f</format>
+
+        <type>float</type>
+
+        <node>/environment/temperature-degc</node>
+
+    </chunk>
   </output>  
 </generic>
 </PropertyList>
