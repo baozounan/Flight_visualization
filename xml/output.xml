@@ -4,11 +4,65 @@
 <output>
   <binary_mode>true</binary_mode>
    <byte_order>host</byte_order>
+<!--仪表数据开始-->
 
+  <!--1.姿态仪-->
+
+    <!--滚转角-->
     <chunk>
 
+       <name>roll-deg</name>
+       <format>roll_deg：%5.2f</format>
+
+       <type>float</type>
+
+       <node>/orientation/roll-deg</node>
+
+    </chunk>
+
+    <!--俯仰角-->
+    <chunk>
+
+       <name>pitch-deg</name>
+       <format>pitch_deg：%5.2f</format>
+
+       <type>float</type>
+
+       <node>/orientation/pitch-deg</node>
+
+    </chunk>
+  <!--2.空速仪-->
+    <!--空速-->
+    <chunk>
+
+       <name>airspeed-kt</name>
+       <format>airspeed_kt：%5.2f</format>
+
+       <type>float</type>
+
+       <node>/velocities/airspeed-kt</node>
+
+    </chunk>
+
+  <!--3.航向仪-->
+    <!--磁航向-->
+    <!--<chunk>
+
+       <name>airspeed-kt</name>
+       <format>airspeed_kt：%5.2f</format>
+
+       <type>float</type>
+
+       <node>/velocities/airspeed-kt</node>
+
+    </chunk>-->
+
+  <!--4.高度仪-->
+    <!--海拔高度-->
+     <chunk>
+
        <name>Pos.qnh</name>
-       <format>Pos：%4.1f</format>
+       <format>Alt：%5.1f</format>
 
        <type>float</type>
 
@@ -16,6 +70,38 @@
 
     </chunk>
 
+  <!--5.垂直速度仪-->
+    <!--垂直速度-->
+    <!--<chunk>
+
+       <name>Pos.qnh</name>
+       <format>Alt：%5.1f</format>
+
+       <type>float</type>
+
+       <node>/position/altitude-ft</node>
+
+    </chunk>-->
+
+  <!--6.转向辅助仪（转向辅助仪主要使用滚转角）-->
+
+  <!--7.转速仪-->
+    <!--发动机转速-->
+    <!--<chunk>
+
+       <name>Pos.qnh</name>
+       <format>Alt：%5.1f</format>
+
+       <type>float</type>
+
+       <node>/position/altitude-ft</node>
+
+    </chunk>-->
+    <!--仪表数据结束-->
+
+
+
+    <!--马赫-->
     <chunk>
 
        <name>MACH Number</name>
@@ -29,7 +115,7 @@
     </chunk>
 
 
-
+    <!--地速-->
      <chunk>
 
        <name>Ground Speed</name>
@@ -41,12 +127,12 @@
      </chunk>
 
 
-
+    <!--过载-->
      <chunk>
 
        <name>G Load</name>
 
-       <format>G：%2.1f</format>
+       <format>G：%3.1f</format>
 
        <type>float</type>
 
@@ -59,7 +145,7 @@
      </chunk>
 
 
-
+    <!--离地高度-->
      <chunk>
 
        <name>AGL</name>
