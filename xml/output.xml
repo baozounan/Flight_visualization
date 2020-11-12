@@ -12,7 +12,7 @@
     <chunk>
 
        <name>roll-deg</name>
-       <format>roll_deg:%5.2f</format>
+       <format>roll_deg:%.2f</format>
 
        <type>float</type>
 
@@ -24,7 +24,7 @@
     <chunk>
 
        <name>pitch-deg</name>
-       <format>pitch_deg:%5.2f</format>
+       <format>pitch_deg:%.2f</format>
 
        <type>float</type>
 
@@ -36,7 +36,7 @@
     <chunk>
 
        <name>airspeed-kt</name>
-       <format>airspeed_kt:%5.2f</format>
+       <format>airspeed_kt:%.2f</format>
 
        <type>float</type>
 
@@ -62,7 +62,7 @@
      <chunk>
 
        <name>Pos.qnh</name>
-       <format>Alt:%5.1f</format>
+       <format>Alt:%.1f</format>
 
        <type>float</type>
 
@@ -90,7 +90,7 @@
     <chunk>
         <name>engine-rpm</name>
         <type>double</type>
-        <format>engine-rpm:%f</format>
+        <format>engine-rpm:%.1f</format>
         <node>/engines/engine/rpm</node>
     </chunk>
     <!--仪表数据结束-->
@@ -102,7 +102,7 @@
 
        <name>MACH Number</name>
 
-       <format>M:%4.1f</format>
+       <format>M:%.1f</format>
 
        <type>float</type>
 
@@ -116,7 +116,7 @@
 
        <name>Ground Speed</name>
 
-       <format>GS:%3dkts</format>
+       <format>GS:%3d</format>
 
        <node>/instrumentation/gps/indicated-ground-speed-kt</node>
 
@@ -128,7 +128,7 @@
 
        <name>G Load</name>
 
-       <format>G:%3.1f</format>
+       <format>G:%.1f</format>
 
        <type>float</type>
 
@@ -146,7 +146,7 @@
 
        <name>AGL</name>
 
-       <format>AGL:%4.0f</format>
+       <format>AGL:%.1f</format>
 
        <type>float</type>
 
@@ -160,7 +160,7 @@
 
         <name>latitude-deg</name>
 
-        <format>latitude-deg:%4.7f</format>
+        <format>latitude-deg:%.7f</format>
 
         <type>double</type>
 
@@ -174,7 +174,7 @@
 
         <name>longitude-deg</name>
 
-        <format>longitude-deg:%4.7f</format>
+        <format>longitude-deg:%.7f</format>
 
         <type>double</type>
 
@@ -202,7 +202,7 @@
 
         <name>BaroA</name>
 
-        <format>BaroA:%4.2f</format>
+        <format>BaroA:%.2f</format>
 
         <type>float</type>
 
@@ -216,7 +216,7 @@
 
         <name>OAT</name>
 
-        <format>OAT:%4.1f</format>
+        <format>OAT:%.1f</format>
 
         <type>float</type>
 
