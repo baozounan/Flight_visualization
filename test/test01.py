@@ -1,7 +1,8 @@
-
+from utils.convert import *
 def main():
-    for i in b'O }^\x10d/@':
-        print(i)
-    print(bin(b'O }^\x10d/@'))
+    str = "AGL:8745"
+    dict = str2dict(str)
+    print(type(dict))
+    print(dict)
 if __name__ == '__main__':
     main()
