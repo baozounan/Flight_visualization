@@ -96,7 +96,6 @@
     <!--仪表数据结束-->
 
 
-
     <!--马赫-->
     <chunk>
 
@@ -155,6 +154,7 @@
      </chunk>
 
 
+<!--飞行数据开始-->
     <!--纬度-->
     <chunk>
 
@@ -221,6 +221,90 @@
         <type>float</type>
 
         <node>/environment/temperature-degc</node>
+
+    </chunk>
+
+
+    <!--地面速度-->
+    <chunk>
+
+        <name>Gndspd</name>
+
+        <format>Gndspd:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/velocities/groundspeed-kt</node>
+
+    </chunk>
+
+
+    <!--升降速度-->
+    <chunk>
+
+        <name>vertical-speed-fps</name>
+
+        <format>vertical-speed-fps:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/velocities/vertical-speed-fps</node>
+
+    </chunk>
+
+
+    <!--航向角-->
+    <chunk>
+
+        <name>heading-deg</name>
+
+        <format>heading-deg:%4.1f</format>
+
+        <type>float</type>
+
+        <node>/orientation/heading-deg</node>
+
+    </chunk>
+
+
+    <!--左油箱油量-->
+    <chunk>
+
+        <name>FQtyL</name>
+
+        <format>FQtyL:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/consumables/tank[0]/level-gal_us</node>
+
+    </chunk>
+
+
+    <!--右油箱油量-->
+    <chunk>
+
+        <name>FQtyR</name>
+
+        <format>FQtyR:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/consumables/tank[1]/level-gal_us</node>
+
+    </chunk>
+
+
+    <!--燃油流量-->
+    <chunk>
+
+        <name>E1FFow</name>
+
+        <format>FQtyL:%4.2f</format>
+
+        <type>float</type>
+
+        <node>/consumables/tank[0]/level-gal_us</node>
 
     </chunk>
   </output>  
