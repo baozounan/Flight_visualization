@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <PropertyList>
 <generic>
-<output>
-  <binary_mode>true</binary_mode>
-   <byte_order>host</byte_order>
+ <output>
+  <line_separator>,</line_separator>
+  <var_separator>,</var_separator>
 <!--仪表数据开始-->
 
   <!--1.姿态仪-->
@@ -110,16 +110,18 @@
     </chunk>
 
 
-    <!--地速-->
-     <chunk>
+    <!--地面速度-->
+    <chunk>
 
-       <name>Ground Speed</name>
+        <name>Gndspd</name>
 
-       <format>GS:%3d</format>
+        <format>Gndspd:%4.2f</format>
 
-       <node>/instrumentation/gps/indicated-ground-speed-kt</node>
+        <type>float</type>
 
-     </chunk>
+        <node>/velocities/groundspeed-kt</node>
+
+    </chunk>
 
 
     <!--过载-->
@@ -155,6 +157,20 @@
 
 
 <!--飞行数据开始-->
+     <!--经度-->
+    <chunk>
+
+        <name>longitude-deg</name>
+
+        <format>longitude-deg:%.7f</format>
+
+        <type>double</type>
+
+        <node>/position/longitude-deg</node>
+
+    </chunk>
+
+
     <!--纬度-->
     <chunk>
 
@@ -166,21 +182,7 @@
 
         <node>/position/latitude-deg</node>
 
-    </chunk>>
-
-
-    <!--经度-->
-    <chunk>
-
-        <name>longitude-deg</name>
-
-        <format>longitude-deg:%.7f</format>
-
-        <type>double</type>
-
-        <node>/position/longitude-deg</node>
-
-    </chunk>>
+    </chunk>
 
 
     <!--高度-->
@@ -221,20 +223,6 @@
         <type>float</type>
 
         <node>/environment/temperature-degc</node>
-
-    </chunk>
-
-
-    <!--地面速度-->
-    <chunk>
-
-        <name>Gndspd</name>
-
-        <format>Gndspd:%4.2f</format>
-
-        <type>float</type>
-
-        <node>/velocities/groundspeed-kt</node>
 
     </chunk>
 
