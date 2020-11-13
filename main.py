@@ -1,5 +1,5 @@
-from udpMethods.socket_udp_receive import *
-from udpMethods.socket_udp_send import *
+import flight_attitude.receive_attitude_data as rec_att_data
+import instrument_panel.receive_panel_data  as rec_pan_data
 
 
 
@@ -7,7 +7,7 @@ from udpMethods.socket_udp_send import *
 
 
 if __name__ == '__main__':
-    udp_receive_message("127.0.0.1", 7080)
+    rec_pan_data.udp_receive_message("127.0.0.1", 7080)
     #udp_send_message("")
 
 
