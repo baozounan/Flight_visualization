@@ -2,5 +2,7 @@ data包是用来存放飞行数据的
 udpMethods存放关于udp服务端和客户端的所有方法
 utils是所有的工具类的包
 xml是flightgear的数据格式xml文件
+instrument_panel是存放操作仪表数据的方法
+flight_attitude是存放操作飞行姿态的方法
 
 现目前项目通过main.py进行启动
