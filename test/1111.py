@@ -1,3 +1,4 @@
+# encoding:utf-8
 import xlsxwriter as xw
 import pandas as pd
 import openpyxl as op
@@ -6,7 +7,7 @@ items = ['A','B','C']
 myData = [10.66,20.77,30.88]
 testData = [orderIds,items,myData]
 
-filename1 = 'E:\\test_data\测试1.xlsx'
+filename1 = 'panel_test_data.csv'
 
 def xw_toexcel(data,filename): # xlsxwriter库储存数据到excel
     workbook = xw.Workbook(filename) # 创建工作簿
@@ -21,5 +22,6 @@ def xw_toexcel(data,filename): # xlsxwriter库储存数据到excel
         worksheet1.write_row(row, insertData)
         i += 1
     workbook.close() # 关闭表
+    return None
 
 xw_toexcel(testData,filename1)
