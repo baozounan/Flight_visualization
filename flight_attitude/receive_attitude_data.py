@@ -20,12 +20,17 @@ def udp_receive_message(ip_addr,port):
         str_recmsg = "{"+rec_msg[:-1]+"}"
         dict_recmsg = json.loads(str_recmsg)
         latitude_deg_data.append(dict_recmsg.get("latitude-deg"))
-        longitude_deg_data.append(dict_recmsg.get("longititude-deg"))
-        savedata2xlsx(longitude_deg_data,latitude_deg_data)
+        longitude_deg_data.append(dict_recmsg.get("longitude-deg"))
+        #savedata2xlsx(latitude_deg_data)
+        longitude_deg_data = [str(i) for i in latitude_deg_data]
+        latitude_deg_data = [str(i) for i in latitude_deg_data]
+        location=[longitude_deg_data,latitude_deg_data]
+        xw_toexcel(location,'E:\\test_data\\test.xlsx')
         #send_addr = rec_data[1] 主机地址信息
         # 打印收到的数据
         # print(rec_data)
-        print(longitude_deg_data,latitude_deg_data)
+        #coordinate=zip(longitude_deg_data,latitude_deg_data)
+        #print(dict(coordinate))
         #print(rec_data)  #数据来源
         #print(type(data))
         # print("%s:%s" % (str(send_addr), rec_msg.decode("gb18030")))
