@@ -1,7 +1,7 @@
 import pandas as pd
 import csv
 import openpyxl
-import numpy
+import numpy as np
 import xlsxwriter as xw
 def str2dict(str):
 
@@ -18,33 +18,37 @@ def savedata2xlsx(data):
        # len(use_title)
          _ = sheet.cell(row=row + 1, column=1, value=u'%s' % data[0][row])
     newexcel = new.save("E:\\test_data\\test.xlsx")
+    return None
 
 
-def xw_toexcel(data,filename): # xlsxwriter库储存数据到excel
+def xw_toexcel(title,data,filename): # xlsxwriter库储存数据到excel
+    """写入数据到本地，filename=文件位置，data是写入的数据是多维数组，title是表格中的列名"""
+    data = np.array(data)
     workbook = xw.Workbook(filename) # 创建工作簿
     worksheet1 = workbook.add_worksheet("sheet1") # 创建子表
     worksheet1.activate() # 激活表
-    title = ['序号','项目','数据'] # 设置表头
     worksheet1.write_row('A1',title) # 从A1单元格开始写入表头
     i = 2 # 从第二行开始写入数据
     for j in range(len(data)):
-        insertData = [data[0][j],data[1][j],data[2][j]]
+        insertData = data[:,j]  # 取一列数据
         row = 'A' + str(i)
         worksheet1.write_row(row, insertData)
         i += 1
     workbook.close() # 关闭表
+    return None
 
 def appendCsvData(data):
 
-   file=open("data\\panel_test_data.csv","a+",newline="")
-   reader = csv.reader(file)
-   original = str(reader)
-   content = csv.writer(file)
-   for row in original:
+    """将数据追加到csv文件中"""
+    file=open("data\\panel_test_data.csv","a+",newline="")
+    reader = csv.reader(file)
+    original = str(reader)
+    content = csv.writer(file)
+    for row in original:
        content.writerow(row)
-   content.writerow(data)
-   file.close()
-   return
+    content.writerow(data)
+    file.close()
+    return None
 
 
 

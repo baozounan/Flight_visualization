@@ -20,7 +20,7 @@ def udp_receive_message(ip_addr,port):
         str_recmsg = "{"+rec_msg[:-1]+"}"
         dict_recmsg = json.loads(str_recmsg)
         total_data.append(dict_recmsg)
-        appendCsvData(str(dict_recmsg.get("engine_rpm")))
+        #appendCsvData(str(dict_recmsg.get("engine_rpm")))
         #send_addr = rec_data[1] 主机地址信息
         # 打印收到的数据
         # print(rec_data)
