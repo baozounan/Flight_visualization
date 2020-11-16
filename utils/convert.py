@@ -20,14 +20,15 @@ def savedata2xlsx(data):
 
 def appendCsvData(data):
 
-    with open("E:\\test_data\\test.csv", "w+") as csvfile:
-        writer = csv.writer(csvfile)
-
-        # 先写入columns_name
-        writer.writerow(data)
-        # 写入多行用writerows
-        #writer.writerows(data)
-        return None
+   file=open("data\\panel_test_data.csv","a+",newline="")
+   reader = csv.reader(file)
+   original = str(reader)
+   content = csv.writer(file)
+   for row in original:
+       content.writerow(row)
+   content.writerow(data)
+   file.close()
+   return
 
 
 

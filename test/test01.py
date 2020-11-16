@@ -1,8 +1,18 @@
 from utils.convert import *
 import json
-def main():
-    str='{"Pos":2962.7,"M":0.1,"GS":"64kts","G":1.2,"AGL":2967}'
-    dict = json.loads(str)
-    print(dict)
+def appendCsvData(data):
+   data1=str(123.78)
+   file=open("panel_test_data.csv","r+",newline="")
+   reader = csv.reader(file)
+   print(list(reader))
+   original = list(reader)
+   print(original)
+   content = csv.writer(file)
+   for row in original:
+       content.writerow(row)
+   content.writerow(data1)
+   file.close()
+   return
+
 if __name__ == '__main__':
-    main()
+    appendCsvData(12)

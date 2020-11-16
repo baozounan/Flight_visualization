@@ -11,19 +11,21 @@ def udp_receive_message(ip_addr,port):
     addr = (ip_addr_str,port)
     udp_socket.bind(addr)
     # 3.创建存储发动机转速数据的结构
+    total_data=[]
     engine_rpm_data=[]
-    # 3接受数据
+    # 4接受数据
     while True:
         rec_data = udp_socket.recvfrom(1024)
         rec_msg = rec_data[0].decode()
         str_recmsg = "{"+rec_msg[:-1]+"}"
         dict_recmsg = json.loads(str_recmsg)
-        engine_rpm_data.append(str(dict_recmsg.get("engine_rpm")))
-        savedata2xlsx(engine_rpm_data)
+        total_data.append(dict_recmsg)
+        appendCsvData(str(dict_recmsg.get("engine_rpm")))
         #send_addr = rec_data[1] 主机地址信息
         # 打印收到的数据
         # print(rec_data)
         print(engine_rpm_data)
+        print(total_data)
         #print(rec_data)  #数据来源
         #print(type(data))
         # print("%s:%s" % (str(send_addr), rec_msg.decode("gb18030")))
