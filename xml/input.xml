@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<comment>
+		<![CDATA[
+			*****************INPUT*******************************
+			Input Cessna 172P instruments data to UDP port 7081.
+			CLI option: --generic=socket,in,5,ip-address,7081,udp,input
+		]]>
+	</comment>
+
+	<generic>
+		<input>
+			<line_separator>newline</line_separator>
+			<var_separator>,</var_separator>
+ 		
+		 <!--海拔高度-->
+      		<chunk>
+
+       			<name>Pos.qnh</name>
+       			<type>float</type>
+       			<node>/position/altitude-ft</node>
+
+    		</chunk>
+
+		     <!--经度-->
+    		<chunk>
+
+        			<name>longitude-deg</name>
+
+        			<type>double</type>
+
+        			<node>/position/longitude-deg</node>
+
+    		</chunk>
+
+
+    		<!--纬度-->
+    		<chunk>
+
+        			<name>latitude-deg</name>
+
+        			<type>double</type>
+
+        			<node>/position/latitude-deg</node>
+
+    		</chunk>
+		</input>
+ 
+ 
+ 
+ 	</generic>
+ 
+ </PropertyList> 
