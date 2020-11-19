@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import xlwings as xw
 import numpy as np
-orderIds = [1.2,2.4,3.6]
+"""orderIds = [1.2,2.4,3.6]
 items = [12.33,12.45,34.56]
 myData = [10.66,20.77,30.88]
 testData = [orderIds,items,myData]
@@ -13,5 +13,9 @@ data=np.transpose(testData).tolist()
 print(data)
 data=np.array(data)
 clo_data=data[:,1]
-print(clo_data)
-#for i in range(len(testData))
+print(clo_data)"""
+a=[[1,2,3], ['1952.11','34.56','45.67']]
+a=np.array(a)
+for i in range(len(a)+1):
+    b=a[:,i]
+    print(b)

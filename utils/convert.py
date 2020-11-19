@@ -3,6 +3,7 @@ import csv
 import openpyxl
 import numpy as np
 import xlsxwriter as xw
+
 def str2dict(str):
 
     """将str类型转换成字典类型，输入一个字符串，返回一个字典"""
@@ -12,6 +13,7 @@ def str2dict(str):
 
 def savedata2xlsx(data):
     """将data保存为本地xlsx文件"""
+
     new = openpyxl.load_workbook("E:\\test_data\\test.xlsx")  # 加载文件
     sheet = new.create_sheet(title="sheet_title")
     for row in range(len(data)):  # len(use_data)
@@ -23,13 +25,16 @@ def savedata2xlsx(data):
 
 def xw_toexcel(title,data,filename): # xlsxwriter库储存数据到excel
     """写入数据到本地，filename=文件位置，data是写入的数据是多维数组，title是表格中的列名"""
-    data = np.array(data)
+    data=np.array(data)
+    print(len(data[0]))
+    print(data)
     workbook = xw.Workbook(filename) # 创建工作簿
     worksheet1 = workbook.add_worksheet("sheet1") # 创建子表
     worksheet1.activate() # 激活表
     worksheet1.write_row('A1',title) # 从A1单元格开始写入表头
     i = 2 # 从第二行开始写入数据
-    for j in range(len(data)):
+    for j in range(len(data)+1):
+        
         insertData = data[:,j]  # 取一列数据
         row = 'A' + str(i)
         worksheet1.write_row(row, insertData)
