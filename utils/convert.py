@@ -34,7 +34,6 @@ def xw_toexcel(title,data,filename): # xlsxwriter库储存数据到excel
     worksheet1.write_row('A1',title) # 从A1单元格开始写入表头
     i = 2 # 从第二行开始写入数据
     for j in range(len(data)+1):
-        
         insertData = data[:,j]  # 取一列数据
         row = 'A' + str(i)
         worksheet1.write_row(row, insertData)
@@ -54,9 +53,3 @@ def appendCsvData(data):
     content.writerow(data)
     file.close()
     return None
-
-
-
-
-
-
